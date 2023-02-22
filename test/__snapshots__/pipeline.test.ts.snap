@@ -33,7 +33,7 @@ exports[`Pipeline Stack 1`] = `
           ],
         },
         "Source": {
-          "BuildSpec": "build-specscdk-build-spec.yml",
+          "BuildSpec": "build-specs/cdk-build-spec.yml",
           "Type": "CODEPIPELINE",
         },
       },
