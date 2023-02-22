@@ -48,15 +48,15 @@ export class PipelineStack extends cdk.Stack {
       })]
     });
 
-    pipeline.addStage({
-      stageName: "Pipeline_Update",
-      actions:[new CloudFormationCreateUpdateStackAction({
-        actionName: 'Pipeline_update',
-        stackName: "PipelineStack",
-        templatePath: cdkBuildOutput.atPath('PipelineStack.template.json'),
-        adminPermissions: true
-      }),
-    ],
-    });
+    // pipeline.addStage({
+    //   stageName: "Pipeline_Update",
+    //   actions:[new CloudFormationCreateUpdateStackAction({
+    //     actionName: 'Pipeline_update',
+    //     stackName: "PipelineStack",
+    //     templatePath: cdkBuildOutput.atPath('PipelineStack.template.json'),
+    //     adminPermissions: true
+    //   }),
+    // ],
+    // });
   }
 }
