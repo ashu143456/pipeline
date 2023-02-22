@@ -1,17 +1,13 @@
-// import * as cdk from 'aws-cdk-lib';
-// import { Template } from 'aws-cdk-lib/assertions';
-// import * as Pipeline from '../lib/pipeline-stack';
+import { App, Fn, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { Pipeline } from "aws-cdk-lib/aws-codepipeline";
+import { PipelineStack } from "../lib/pipeline-stack";
 
-// example test. To run these tests, uncomment this file along with the
-// example resource in lib/pipeline-stack.ts
-test('SQS Queue Created', () => {
-//   const app = new cdk.App();
-//     // WHEN
-//   const stack = new Pipeline.PipelineStack(app, 'MyTestStack');
-//     // THEN
-//   const template = Template.fromStack(stack);
+jest.useRealTimers();
+jest.setTimeout(10 * 100000);
 
-//   template.hasResourceProperties('AWS::SQS::Queue', {
-//     VisibilityTimeout: 300
-//   });
-});
+test('Pipeline Stack', Fn=>{
+    const app = new App();
+    const stack = new PipelineStack(app,'MyPipelineTest');
+    expect(Template.fromStack(stack).toJSON()).toMatchSnapshot();
+})
