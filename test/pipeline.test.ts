@@ -4,7 +4,7 @@ import { Pipeline } from "aws-cdk-lib/aws-codepipeline";
 import { PipelineStack } from "../lib/pipeline-stack";
 
 jest.useRealTimers();
-jest.setTimeout(10 * 100000);
+jest.setTimeout(10 * 1000);
 
 test('Pipeline Stack', Fn=>{
     const app = new App();
